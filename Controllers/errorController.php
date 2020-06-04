@@ -1,0 +1,7 @@
+<?php
+class errorController
+{
+	function index(){
+		echo '<h1>Error 404: page not found</h1>';
+	}
+}

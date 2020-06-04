@@ -1,0 +1,14 @@
+<IfModule module_rewrite.c>
+#activar reWrite
+RewriteEngine on
+RewriteBase /
+ErrorDocument 404 http://localhost/Udemy/ProyectoTiendaMVC/error/
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+  #  ErrorDocument 404 /index.php/error404
+		ErrorDocument 404 http://localhost/Udemy/ProyectoTiendaMVC/.index.html
+</IfModule>
