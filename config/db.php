@@ -3,7 +3,7 @@ class Database
 {
 	public static function connect()
 	{
-		$db = new mysqli('localhost', 'root', '', 'Tienda');
+		$db = new mysqli('localhost', 'root', '', 'tienda_master');
 		$db->query('set names \'utf8\' ');
 		return $db;
 	}

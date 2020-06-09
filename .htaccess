@@ -1,5 +1,6 @@
 Options +FollowSymlinks
 RewriteEngine on
+#RewriteBase /
 ErrorDocument 404 http://localhost/Udemy/ProyectoTiendaMVC/error/
 
 RewriteCond %{SCRIPT_FILENAME} !-d

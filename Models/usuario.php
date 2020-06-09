@@ -44,13 +44,13 @@ class usuario
 		return	(string) $this->email;
 	}
 
-	function setPassword(string $s)
-	{
-		$this->password = password_hash($this->db->real_escape_string((string) $s), PASSWORD_BCRYPT, ['cost' => 4]);
-	}
 	function getPassword()
 	{
-		return 	$this->password;
+		return password_hash($this->db->real_escape_string((string) $this->password), PASSWORD_BCRYPT, ['cost' => 4]);
+	}
+	function setPassword(string $s)
+	{
+		$this->password = $s;
 	}
 
 	function  setImagen($im)
@@ -64,7 +64,7 @@ class usuario
 
 	function  getRol()
 	{
-		return 		$this->rol;
+		return 	$this->rol;
 	}
 	function  setRol($r)
 	{
@@ -73,9 +73,25 @@ class usuario
 
 	function save()
 	{
-		$sql = 'Insert into usuario values(NULL, \'{$this->getNombre}\', \'{$this->getApellido}\', \'{$this->getEmail}\', , \'{$this->getPassword}\', \'user\', null)';
-
-		if (($save = $this->db->query($sql)) == true) return true;
+		$sql = "Insert into usuarios values(NULL, '{$this->getNombre()}', '{$this->getApellido()}', '{$this->getEmail()}','{$this->getPassword()}', 'user', null)";
+		if ($this->db->query($sql)) return true;
 		return false;
+	}
+
+	function login($email, $password)
+	{
+		$this->setEmail($email);
+		$this->setPassword($password);
+
+		$sql = "select * from usuarios where email = '{$this->email}'";
+
+		$login = $this->db->query($sql);
+
+		if ($login && $login->num_rows == 1) {
+			$user = $login->fetch_object();
+			if (password_verify($this->password, $user->password) == true)
+				return $user;
+		}
+		return null;
 	}
 }

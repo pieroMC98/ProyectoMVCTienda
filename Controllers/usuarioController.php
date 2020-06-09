@@ -6,6 +6,7 @@ class usuarioController
 	{
 		echo '<h1>Prueba de content</h1>';
 	}
+
 	function registro()
 	{
 		require_once 'Views/UsuarioViews/registro.php';
@@ -15,16 +16,26 @@ class usuarioController
 	{
 		if (isset($_POST)) {
 			$user = new Usuario();
-			$user->setNombre($_POST['name']);
-			$user->setApellido($_POST['fullname']);
-			$user->setEmail($_POST['email']);
-			$user->setPassword($_POST['pass']);
-			/*$user->setImagen($_POST['imagen']);
-			$user->setRol($_POST['rol']); */
-			if ($user->save()) echo 'Success';
-			else 'Not';
-		} else {
-			echo 'no recibo';
+			$user->setNombre(isset($_POST['name']) ? $_POST['name'] : false);
+			$user->setApellido(isset($_POST['fullname']) ? $_POST['fullname'] : false);
+			$user->setEmail(isset($_POST['email']) ? $_POST['email'] : false);
+			$user->setPassword(isset($_POST['password']) ? $_POST['password'] : false);
+			$_SESSION['register'] = $user->save() ? true : false;
 		}
+		header('Location:' . root . 'usuario/registro');
+	}
+
+	function login()
+	{
+		if ($_POST) {
+			$user = new usuario();
+			$identity = $user->login($_POST['email'], $_POST['password']);
+
+			if ($identity != null && is_object($identity)) {
+				$_SESSION['identity'] = $identity;
+				$_SESSION['admin'] = $identity->rol == 'admin' ? true : false;
+			}
+		}
+		header(("location:" . root));
 	}
 }

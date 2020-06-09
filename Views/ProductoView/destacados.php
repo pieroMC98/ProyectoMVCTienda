@@ -1,7 +1,7 @@
 					<!-- Productos Destacados -->
 					<h1>Productos destacados</h1>
 					<div class="product">
-						<img src="../assets/camiseta.png" alt="ca" />
+						<img src="<?= root ?>/assets/camiseta.png" alt="ca" />
 						<h2>
 							Camiseta Azul
 						</h2>
@@ -9,7 +9,7 @@
 						<a href="#" class="button">Comprar</a>
 					</div>
 					<div class="product">
-						<img src="../assets/camiseta.png" alt="cv" />
+						<img src="<?= root ?>/assets/camiseta.png" alt="cv" />
 						<h2>
 							Camiseta Verde
 						</h2>
@@ -17,7 +17,7 @@
 						<a href="#" class="button">Comprar</a>
 					</div>
 					<div class="product">
-						<img src="../assets/camiseta.png" alt="cam" />
+						<img src="<?= root ?>/assets/camiseta.png" alt="cam" />
 						<h2>
 							Camiseta Amarilla
 						</h2>
