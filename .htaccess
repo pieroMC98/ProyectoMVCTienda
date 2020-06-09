@@ -1,8 +1,7 @@
-Options +FollwSymlinks
+Options +FollowSymlinks
 RewriteEngine on
 ErrorDocument 404 http://localhost/Udemy/ProyectoTiendaMVC/error/
 
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
-ErrorDocument 404 http://localhost/Udemy/ProyectoTiendaMVC/error/
 RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
