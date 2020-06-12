@@ -11,6 +11,9 @@ require_once 'config/db.php';
 require_once 'Views/Layout/header.php';
 require_once 'Views/Layout/aside.php';
 
+$controller_name = controller_default;
+$action_name = action_default;
+
 function showError()
 {
 	$error = new errorController();
@@ -18,8 +21,22 @@ function showError()
 }
 
 $deb = Database::connect();
+if (isset($_GET['controller'])) {
+	$controller_name = $_GET['controller'] . 'Controller';
+	if (isset($_GET['action']))
+		$action_name = $_GET['action'] == '' ? action_default : $_GET['action'];
+}
 
-//Recoge 
+if (class_exists($controller_name)) {
+	$main = new $controller_name();
+}
+
+if (method_exists($controller_name, $action_name)) {
+	$main->$action_name();
+}
+
+
+/* //Recoge 
 if (isset($_GET['controller'])) {
 	$controller_name = $_GET['controller'] . 'Controller';
 } elseif (!isset($_GET['controller']) && !isset($_GET['action'])) {
@@ -37,5 +54,5 @@ if (class_exists($controller_name)) {
 		// echo '<h1>El defecto</h1>';
 	} else echo 'Metodo no existe>>' . $_GET['action'];
 } else echo 'La clase no existe';
-
+ */
 require_once 'Views/Layout/footer.php';
