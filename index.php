@@ -19,7 +19,7 @@ function showError()
 
 $deb = Database::connect();
 
-//REcoge 
+//Recoge 
 if (isset($_GET['controller'])) {
 	$controller_name = $_GET['controller'] . 'Controller';
 } elseif (!isset($_GET['controller']) && !isset($_GET['action'])) {

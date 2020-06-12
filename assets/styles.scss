@@ -181,11 +181,19 @@ input[type="submit"] {
 button {
 	@extend %form;
 }
+
 .button {
 	@extend %form;
 	background: #33ae3d;
 	color: white !important;
 	text-decoration: none;
+}
+
+.button-small {
+	// @extend .button;
+	@include debug(red, 2);
+	width: 120px;
+	padding-top: 20px;
 }
 
 label,
@@ -243,7 +251,7 @@ button {
 	}
 }
 
-#footer{
+#footer {
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;

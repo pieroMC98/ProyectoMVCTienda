@@ -4,7 +4,7 @@ class usuarioController
 {
 	function index()
 	{
-		echo '<h1>Prueba de content</h1>';
+		require_once 'Views/UsuarioViews/index.php';
 	}
 
 	function registro()
@@ -36,6 +36,16 @@ class usuarioController
 				$_SESSION['admin'] = $identity->rol == 'admin' ? true : false;
 			}
 		}
+		header(("location:" . root));
+	}
+
+	function logout()
+	{
+		if (isset($_SESSION['identity']))
+			unset($_SESSION['identity']);
+
+		if (isset($_SESSION['admin']))
+			unset($_SESSION['admin']);
 		header(("location:" . root));
 	}
 }

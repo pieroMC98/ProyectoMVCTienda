@@ -16,18 +16,27 @@
 						<h3><?= $_SESSION['identity']->nombre ?></h3>
 					<?php endif; ?>
 					<ul>
-						<li>
-							<a href="">Mis
-								pedidos</a>
-						</li>
-						<li>
-							<a href="">Gestionar
-								pedidos</a>
-						</li>
-						<li>
-							<a href="">Gestionar
-								categoria</a>
-						</li>
+						<?php if (isset($_SESSION['admin']) && (true == $_SESSION['admin'])) : ?>
+							<li>
+								<a href="">Gestionar
+									pedidos</a>
+							</li>
+							<li>
+								<a href="">Gestionar
+									categoria</a>
+							</li>
+							<li>
+								<a href="">Gestionar</a>
+							</li>
+						<?php endif; ?>
+
+						<?php if (isset($_SESSION['identity'])) : ?>
+							<li>
+								<a href="">Mis
+									pedidos</a>
+							</li>
+							<li><a href="<?= root ?>usuario/logout">Cerrar sesi'on</a></li>
+						<?php endif ?>
 					</ul>
 				</aside>
 				<div id="central">

@@ -1,0 +1,1 @@
+echo '<h1>Prueba de content</h1>';
