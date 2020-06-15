@@ -190,10 +190,11 @@ button {
 }
 
 .button-small {
-	// @extend .button;
-	@include debug(red, 2);
+	@extend .button;
+	font-size: 0.8rem;
 	width: 120px;
-	padding-top: 20px;
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 label,
@@ -258,4 +259,20 @@ button {
 	color: white;
 	background: #222222;
 	border-top: 5px solid $tr;
+}
+
+#categoria {
+	margin: 0 auto;
+	@include debug(grey, 3);
+	width: 100%;
+	align-content: center;
+	tr {
+		& > th {
+			width: 50%;
+		}
+td {
+			text-align: center;
+			border-top: 1px solid grey;
+		}
+	}
 }

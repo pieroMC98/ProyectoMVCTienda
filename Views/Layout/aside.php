@@ -18,7 +18,7 @@
 					<ul>
 						<?php if (isset($_SESSION['admin']) && (true == $_SESSION['admin'])) : ?>
 							<li>
-								<a href="">Gestionar
+								<a href="<?= root ?>categoria/index">Gestionar
 									pedidos</a>
 							</li>
 							<li>
@@ -35,7 +35,9 @@
 								<a href="">Mis
 									pedidos</a>
 							</li>
-							<li><a href="<?= root ?>usuario/logout">Cerrar sesi'on</a></li>
+							<li><a href="<?= root ?>usuario/logout">Cerrar sesión</a></li>
+						<?php else : ?>
+							<li><a href="<?= root ?>usuario/registro">Registrate aqui</a></li>
 						<?php endif ?>
 					</ul>
 				</aside>

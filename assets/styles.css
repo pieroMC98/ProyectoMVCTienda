@@ -178,7 +178,7 @@ select:focus {
   color: black;
 }
 
-input[type="button"], input[type="submit"], button, .button {
+input[type="button"], input[type="submit"], button, .button, .button-small {
   display: block;
   border-radius: 2px;
   padding: 5px;
@@ -190,16 +190,17 @@ input[type="button"], input[type="submit"], button, .button {
   cursor: pointer;
 }
 
-.button {
+.button, .button-small {
   background: #33ae3d;
   color: white !important;
   text-decoration: none;
 }
 
 .button-small {
-  border: 2px solid red;
+  font-size: 0.8rem;
   width: 120px;
-  padding-top: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 label,
@@ -266,5 +267,22 @@ button {
   color: white;
   background: #222222;
   border-top: 5px solid #01b1ea;
+}
+
+#categoria {
+  margin: 0 auto;
+  border: 3px solid grey;
+  width: 100%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#categoria tr > th {
+  width: 50%;
+}
+
+#categoria tr td {
+  text-align: center;
+  border-top: 1px solid grey;
 }
 /*# sourceMappingURL=styles.css.map */

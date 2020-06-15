@@ -6,10 +6,9 @@
 
 	<?php if ($_SESSION['register'] == false) : ?>
 		<strong>Registro Fallido</strong>
-	<?php endif ?>
+		<?php Utils::deleteSession($_SESSION['register']); ?>
+	<?php endif; ?>
 <?php endif; ?>
-<?php Utils::deleteSession($_SESSION['register']);
-?>
 
 <form action="<?= root ?>usuario/save" method="post">
 	<label for="name">Nombre:</label>
