@@ -16,13 +16,15 @@
 						<h3><?= $_SESSION['identity']->nombre ?></h3>
 					<?php endif; ?>
 					<ul>
-						<?php if (isset($_SESSION['admin']) && (true == $_SESSION['admin'])) : ?>
+						<?php
+						Utils::isAdmin(); 
+						if (isset($_SESSION['admin']) && (true == $_SESSION['admin'])) : ?>
 							<li>
 								<a href="<?= root ?>categoria/index">Gestionar
 									pedidos</a>
 							</li>
 							<li>
-								<a href="">Gestionar
+								<a href="<?= root ?>producto/management">Gestionar
 									categoria</a>
 							</li>
 							<li>
@@ -32,8 +34,7 @@
 
 						<?php if (isset($_SESSION['identity'])) : ?>
 							<li>
-								<a href="">Mis
-									pedidos</a>
+								<a href="">Mis pedidos</a>
 							</li>
 							<li><a href="<?= root ?>usuario/logout">Cerrar sesión</a></li>
 						<?php else : ?>

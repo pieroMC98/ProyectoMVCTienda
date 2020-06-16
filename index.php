@@ -4,7 +4,7 @@
 session_start();
 require_once 'helpers/utils.php';
 require 'autoload.php';
-require_once '../vendor/autoload.php';
+// require_once '../vendor/autoload.php';
 // $fphp = FirePHP::DUMP;
 require_once 'config/params.php';
 require_once 'config/db.php';

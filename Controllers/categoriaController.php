@@ -5,6 +5,7 @@ class categoriaController
 	function index()
 	{
 		Utils::isAdmin();
+		$link = Utils::showCategorias();
 		require_once 'Views/CategoriaView/index.php';
 	}
 
