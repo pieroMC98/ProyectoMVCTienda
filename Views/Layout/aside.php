@@ -17,14 +17,21 @@
 					<?php endif; ?>
 					<ul>
 						<?php
-						Utils::isAdmin(); 
+						Utils::isAdmin();
 						if (isset($_SESSION['admin']) && (true == $_SESSION['admin'])) : ?>
 							<li>
-								<a href="<?= root ?>categoria/index">Gestionar
-									pedidos</a>
-							</li>
-							<li>
 								<a href="<?= root ?>producto/management">Gestionar
+									productos</a>
+									
+							</li>
+
+							<li>
+								<a href="<?= root ?>categoria/index">Gestionar pedidos
+								</a>
+							</li>
+
+							<li>
+								<a href="<?= root ?>categoria/index">Gestionar
 									categoria</a>
 							</li>
 							<li>

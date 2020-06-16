@@ -33,7 +33,7 @@ if (class_exists($controller_name)) {
 
 if (method_exists($controller_name, $action_name)) {
 	$main->$action_name();
-}
+} else echo '<h2>El metodo no existe</h2>';
 
 
 /* //Recoge 

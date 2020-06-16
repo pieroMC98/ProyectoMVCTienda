@@ -11,14 +11,15 @@ class Utils
 	}
 
 	static function isAdmin()
-	{
-
+	{ 
 		$c = Database::connect();
-		$sql = "select * from usuarios where nombre = '{$_SESSION['identity']->nombre}'";
-		if ($c->query($sql)->fetch_object()->rol == 'admin') $_SESSION['admin'] = true;
-		if (!isset($_SESSION['admin']))
-			header('Location:' . root);
-		else return true;
+		if (isset($_SESSION['identity'])) {
+			$sql = "select * from usuarios where nombre = '{$_SESSION['identity']->nombre}'";
+			if ($c->query($sql)->fetch_object()->rol == 'admin') $_SESSION['admin'] = true;
+
+			if (!isset($_SESSION['admin']))
+				header('Location:' . root);
+		} else return true;
 	}
 
 	static function showCategorias()

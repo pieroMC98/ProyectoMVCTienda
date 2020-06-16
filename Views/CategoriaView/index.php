@@ -1,7 +1,7 @@
 <h1>Gestionar las categorias</h1>
 <a href="<?= root ?>categoria/crear" class="button-small">Crear Categoria</a>
 
-<table id=categoria>
+<table class=categoria>
 	<tr>
 		<th>Nombre:</th>
 		<th>ID:</th>

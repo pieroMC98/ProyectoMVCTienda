@@ -159,7 +159,9 @@ select {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-select {
+input[type="number"],
+select,
+textarea {
   border: 1px solid #c9c9c9;
   -webkit-box-shadow: 0 0 2px #ccc inset;
           box-shadow: 0 0 2px #ccc inset;
@@ -173,7 +175,9 @@ select {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
-select:focus {
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
   border: 3px solid #1579b5;
   color: black;
 }
@@ -269,20 +273,22 @@ button {
   border-top: 5px solid #01b1ea;
 }
 
-#categoria {
+.categoria {
   margin: 0 auto;
   border: 3px solid grey;
-  width: 100%;
   -ms-flex-line-pack: center;
       align-content: center;
 }
 
-#categoria tr > th {
-  width: 50%;
+.categoria tr th {
+  width: 12rem;
+  border-right: 1px solid black;
+  border-bottom: 3px solid black;
 }
 
-#categoria tr td {
+.categoria tr td {
+  width: 12rem;
   text-align: center;
-  border-top: 1px solid grey;
+  border-right: 1px solid black;
 }
 /*# sourceMappingURL=styles.css.map */
