@@ -54,7 +54,6 @@ class categoria
 	function save()
 	{
 		$sql = "Insert into categorias values(NULL, '{$this->getNombre()}')";
-		if ($this->db->query($sql)) return true;
-		return false;
+		return $this->db->query($sql);
 	}
 }

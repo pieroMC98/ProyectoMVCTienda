@@ -1,5 +1,5 @@
 <h1>Crear producto</h1>
-<form action="<?= root ?>producto/save" method="post">
+<form action="<?= root ?>producto/save" method="post" enctype="multipart/form-data">
 
 	<label for="nombre">Nombre:</label>
 	<input type="text" id="nombre" name="nombre">
@@ -10,6 +10,12 @@
 	<label for="stock">Stock:</label>
 	<input type="number" id="stock" name="stock">
 
+	<label for="price">Precio:</label>
+	<input type="number" id="price" name="price">
+
+	<label for="imagen">Imagen:</label>
+	<input type="file" name="imagen" id="imagen">
+	
 	<label for="categoria">Categoria:</label>
 	<?php $categoria = Utils::showCategorias() ?>
 	<select name="categoria" id="categoria">
@@ -19,7 +25,5 @@
 			</option>
 		<?php endwhile ?>
 	</select>
-	<label for="img">Imagen:</label>
-	<input type="file" name="img" id="img">
 	<input type="submit" value="Crear">
 </form>

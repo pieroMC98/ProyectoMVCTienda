@@ -1,7 +1,8 @@
 <?php
 // require_once 'Controllers/UsuarioController.php';
 // require_once 'Controllers/NotaController.php';
-session_start();
+/* ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));*/
+session_start(); 
 require_once 'helpers/utils.php';
 require 'autoload.php';
 // require_once '../vendor/autoload.php';

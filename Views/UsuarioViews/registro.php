@@ -6,7 +6,7 @@
 
 	<?php if ($_SESSION['register'] == false) : ?>
 		<strong>Registro Fallido</strong>
-		<?php Utils::deleteSession($_SESSION['register']); ?>
+		<?php Utils::deleteSession('register'); ?>
 	<?php endif; ?>
 <?php endif; ?>
 

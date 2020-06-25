@@ -6,7 +6,7 @@
 		{
 			"label": "Open",
 			"type": "shell",
-			"command": "brave-browser "
+			"command": "brave-browser http://localhost/Udemy/ProyectoTiendaMVC/"
 		}
 	]
 }

@@ -23,7 +23,6 @@
 		"titleBar.border": "#eb5424"
 	},
 	"peacock.color": "#eb5424",
-	"python.pythonPath": "/usr/bin/python3",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 16
 }
