@@ -22,7 +22,7 @@
 							<li>
 								<a href="<?= root ?>producto/management">Gestionar
 									productos</a>
-									
+
 							</li>
 
 							<li>

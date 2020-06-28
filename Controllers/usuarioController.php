@@ -41,11 +41,6 @@ class usuarioController
 
 	function logout()
 	{
-		/* 		if (isset($_SESSION['identity']))
-			unset($_SESSION['identity']);
-
-		if (isset($_SESSION['admin']))
-			unset($_SESSION['admin']); */
 		session_unset();
 		session_destroy();
 		header(("location:" . root));

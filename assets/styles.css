@@ -291,4 +291,8 @@ button {
   text-align: center;
   border-right: 1px solid black;
 }
+
+.thumbs {
+  width: 200px;
+}
 /*# sourceMappingURL=styles.css.map */

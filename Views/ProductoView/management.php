@@ -15,13 +15,18 @@
 		<th>ID:</th>
 		<th>Precio:</th>
 		<th>Stock:</th>
+		<th>Action</th>
 	</tr>
-	<?php while (($cat = $link->fetch_object()) == true) : ?>
+	<?php while (($prod = $link->fetch_object()) == true) : ?>
 		<tr>
-			<td><?= $cat->nombre; ?></td>
-			<td><?= $cat->id; ?></td>
-			<td><?= $cat->stock; ?></td>
-			<td><?= $cat->fecha; ?></td>
+			<td><?= $prod->nombre; ?></td>
+			<td><?= $prod->id; ?></td>
+			<td><?= $prod->stock; ?></td>
+			<td><?= $prod->fecha; ?></td>
+			<td>
+				<a href="<?= root ?>producto/delete&id=<?= $prod->id ?>" class="button-small">Eliminar</a>
+				<a href="<?= root ?>producto/edit&id=<?= $prod->id ?>" class="button-small">Editar</a>
+			</td>
 		</tr>
 	<?php endwhile; ?>
 </table>

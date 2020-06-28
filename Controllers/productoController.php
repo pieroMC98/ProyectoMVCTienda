@@ -19,6 +19,7 @@ class productoController
 		Utils::isAdmin();
 		require_once 'Views/ProductoView/crear.php';
 	}
+
 	function save()
 	{
 		if (isset($_POST)) {
@@ -47,5 +48,39 @@ class productoController
 			}
 			header('Location:' . root . 'producto/management');
 		}
+	}
+
+	function delete()
+	{
+		Utils::isAdmin();
+		if ($_GET['id']) {
+			$p = new producto();
+			$p->setId($_GET['id']);
+			$_SESSION['delete_product'] = $p->delete();
+		}
+		header('Location:' . root . 'producto/management');
+	}
+
+	function edit()
+	{
+		Utils::isAdmin();
+		if (isset($_GET['id'])) {
+			$edit = true;
+			$product = new producto();
+			$product->setId($_GET['id']);
+			$product = $product->getOne();
+			require_once 'Views/ProductoView/crear.php';
+		}
+	}
+
+	function update()
+	{
+		if ($_POST) {
+			var_dump($_POST);
+			$update = new producto();
+			$update->setId($_GET['id']);
+			$update->update();
+		}
+		//	header('Location:' . root . 'producto/management');
 	}
 }

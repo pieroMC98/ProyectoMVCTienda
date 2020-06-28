@@ -11,6 +11,7 @@ class producto
 
 	public function setId($id)
 	{
+		$this->id = $id;
 	}
 
 	public function getId()
@@ -90,10 +91,28 @@ class producto
 	{
 		return $this->db->query('select * from productos order by id DESC');
 	}
+	function getOne()
+	{
+		$sql = "select * from productos where id = {$this->getId()}";
+		return $this->db->query($sql)->fetch_object();
+	}
 
 	function save()
 	{
 		$sql = "insert into productos values (NULL,{$this->getCID()},'{$this->getNombre()}','{$this->getBrief()}',{$this->getPrice()},{$this->getStock()},NULL,CURDATE(),'{$this->getImg()}');";
 		return $this->db->query($sql);
+	}
+
+	function update()
+	{
+		echo $sql = "update productos set categoria_id = {$this->getCID()},nombre = '{$this->getNombre()}', descripcion = '{$this->getBrief()}', precio = '{$this->getPrice()},{$this->getStock()}, imagen = '{$this->getImg()}'
+		where id = {$this->getId()};";
+
+		return $this->db->query($sql);
+	}
+	function delete()
+	{
+		$query = "delete from productos where id = {$this->getId()}";
+		return $this->db->query($query);
 	}
 }
